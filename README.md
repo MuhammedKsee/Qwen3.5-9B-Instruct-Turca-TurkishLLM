@@ -25,9 +25,10 @@ A supervised fine-tune of **Qwen/Qwen3.5-9B** for Turkish instruction following,
 
 ## Benchmark Results
 
-Evaluated with [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) v0.4.2 — 0-shot, H100 GPU.
+Evaluated with [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) v0.4.2 — H100 GPU.
+`pretrained: MuhammedKsee/Qwen3.5-9B-Instruct-Turca-TurkishLLM` · `batch_size: auto (64)`
 
-**English (Catastrophic Forgetting Test)**
+**English — Catastrophic Forgetting Test (0-shot)**
 
 | Task | Metric | Score |
 | --- | --- | --- |
@@ -35,7 +36,16 @@ Evaluated with [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluati
 | HellaSwag | acc_norm | **0.7834** |
 | ARC-Challenge | acc_norm | **0.5375** |
 
-**Turkish NLP**
+**Reasoning & Code**
+
+| Task | n-shot | Filter | Metric | Score |
+| --- | --- | --- | --- | --- |
+| GSM8K | 5 | strict-match | exact_match | **0.8491** |
+| GSM8K | 5 | flexible-extract | exact_match | **0.8438** |
+| HumanEval (instruct) | 0 | create_test | pass@1 | **0.2622** |
+| TinyTruthfulQA | 0 | none | acc | **0.4724** |
+
+**Turkish NLP (0-shot)**
 
 | Task | Metric | Score |
 | --- | --- | --- |
@@ -43,7 +53,7 @@ Evaluated with [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluati
 | Turkish MMLU | acc | **0.6555** |
 | XCOPA (TR) | acc | **0.6780** |
 
-No catastrophic forgetting observed — English reasoning is preserved after Turkish fine-tuning.
+No catastrophic forgetting observed — English reasoning is fully preserved after Turkish fine-tuning.
 
 ---
 
