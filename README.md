@@ -3,10 +3,10 @@
 A supervised fine-tune of **Qwen/Qwen3.5-9B** for Turkish instruction following, reasoning, and natural language generation — trained on 500K samples from the InstrucTurca dataset.
 
 > 📦 **Model weights, training details, and full documentation are on Hugging Face:**
-> **[👉 muhammedksee/Qwen3.5-9B-Instruct-Turca-TurkishLLM](https://huggingface.co/muhammedksee/Qwen3.5-9B-Instruct-Turca-TurkishLLM)**
+> **[👉 MuhammedKsee/Qwen3.5-9B-Instruct-Turca-TurkishLLM](https://huggingface.co/MuhammedKsee/Qwen3.5-9B-Instruct-Turca-TurkishLLM)**
 >
 > 🗜️ **Local inference (GGUF / Ollama / llama-cpp):**
-> **[👉 muhammedksee/Qwen3.5-9B-Instruct-Turca-TurkishLLM-GGUF](https://huggingface.co/muhammedksee/Qwen3.5-9B-Instruct-Turca-TurkishLLM-GGUF)**
+> **[👉 MuhammedKsee/Qwen3.5-9B-Instruct-Turca-TurkishLLM-GGUF](https://huggingface.co/MuhammedKsee/Qwen3.5-9B-Instruct-Turca-TurkishLLM-GGUF)**
 
 ---
 
@@ -53,7 +53,7 @@ No catastrophic forgetting observed — English reasoning is preserved after Tur
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-model_id = "muhammedksee/Qwen3.5-9B-Instruct-Turca-TurkishLLM"
+model_id = "MuhammedKsee/Qwen3.5-9B-Instruct-Turca-TurkishLLM"
 
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 model = AutoModelForCausalLM.from_pretrained(
@@ -80,5 +80,5 @@ print(tokenizer.batch_decode(outputs, skip_special_tokens=True)[0])
 ## Contact
 
 - 🔗 [LinkedIn](https://linkedin.com/in/muhammedksee)
-- 🐙 [GitHub](https://github.com/muhammedksee)
-- 🤗 [Hugging Face](https://huggingface.co/muhammedksee)
+- 🐙 [GitHub](https://github.com/MuhammedKsee)
+- 🤗 [Hugging Face](https://huggingface.co/MuhammedKsee)
